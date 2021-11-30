@@ -3,7 +3,6 @@
 	try { 
 		$linkpdo = new PDO("mysql:host=localhost;dbname=gestion", 'root',);
 		$linkpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "Connexion réussie <br/>";
 	} 
 	catch (Exception $e) { 
 		die('Erreur : ' . $e->getMessage()); 
@@ -18,7 +17,7 @@
 	$date_naissance = $_POST['date_naissance'];
 	$lieu_naissance = $_POST['lieu_naissance'];
 	$num_secu = $_POST['num_secu'];
-
+	//médecin
 			
 	$req = $linkpdo->prepare('INSERT INTO usager(nom, prenom, adresse, cp, ville, civilite, date_de_naissance, lieu_naissance, num_secu) VALUES(:nom, :prenom, :adresse, :cp, :ville, :civilite, :date_de_naissance, :lieu_naissance, :num_secu)'); 
 

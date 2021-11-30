@@ -11,6 +11,7 @@
             Date de naissance :         <input type='date' name="date_naissance" required/><br/>
             Lieu de naissance :         <input type='text' name="lieu_naissance" required/><br/>
             Numéro de sécurité sociale :         <input type='text' name="num_secu" required/><br/>
+            <!-- médecin -->
 			<input type='reset' />
 			<input type='submit'/>
 
