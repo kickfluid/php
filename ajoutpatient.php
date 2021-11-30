@@ -1,5 +1,3 @@
-ajoutpatient
-
 <html>
 <?php 
 	try { 
@@ -16,15 +14,23 @@ ajoutpatient
 	$adresse = $_POST['adresse'];
 	$cp = $_POST['cp'];
 	$ville = $_POST['ville'];
+	$civilite = $_POST['civilite'];
+	$date_naissance = $_POST['date_naissance'];
+	$lieu_naissance = $_POST['lieu_naissance'];
+	$num_secu = $_POST['num_secu'];
 
 			
-	$req = $linkpdo->prepare('INSERT INTO contact(nom, prenom, adresse, cp, ville, tel) VALUES(:nom, :prenom, :adresse, :cp, :ville, :tel)'); 
+	$req = $linkpdo->prepare('INSERT INTO usager(nom, prenom, adresse, cp, ville, civilite, date_de_naissance, lieu_naissance, num_secu) VALUES(:nom, :prenom, :adresse, :cp, :ville, :civilite, :date_de_naissance, :lieu_naissance, :num_secu)'); 
 
 	$req->execute(array('nom' => $nom, 
 	'prenom' => $prenom, 
 	'adresse' => $adresse, 
 	'cp' => $cp, 
-	'ville' => $ville, 
+	'ville' => $ville,
+	'civilite' => $civilite, 
+	'date_de_naissance' => $date_naissance, 
+	'lieu_naissance' => $lieu_naissance, 
+	'num_secu' => $num_secu));
 
 
 
@@ -33,5 +39,5 @@ ajoutpatient
 
 
 ?>
-<form action="CarnetAdresses.php"><button>retour</button></form>
+<form action="index.php"><button>retour</button></form>
 </html>
