@@ -6,8 +6,7 @@
 
 		
 		<form action="ajoutm.php"><button>Ajouter un médecin</button></form>
-		<form action="modificationmedecin.php"><button>Modifier un médecin</button></form>
-		<form action="suppressionmedecin.php"><button>Supprimer un médecin</button></form>
+		<form action="rechercherm.php"><button>Rechercher un médecin</button></form>
 
 		<?php
 
