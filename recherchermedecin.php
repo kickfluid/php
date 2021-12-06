@@ -11,7 +11,7 @@
 ?>
 
 <table border="1">
-	<tr>><th>Civilité</th><th>Nom</th><th>Prénom</th></tr>
+	<tr><th>Civilité</th><th>Nom</th><th>Prénom</th><th>Modifier</th><th>Supprimer</th></tr>
 
 <?php
 	$rechercher = '%'.$_POST['rechercher'].'%';
@@ -23,12 +23,13 @@
                 <td><?php echo $data['civilite']; ?></td>
                 <td><?php echo $data['nom']; ?></td>
                 <td><?php echo $data['prenom']; ?></td>
-                <td><a href="modificationmedecin.php?ID=<?php echo $data['id_medecin'];?>">oui</a></td> 
-				<td><a href="supprissionmedecin.php?ID=<?php echo $data['id_medecin'];?>">oui</a></td>
+                <td><a href="modifiermedecin.php?id_medecin=<?php echo $data['id_medecin'];?>">oui</a></td> 
+				<td><a href="supprimermedecin.php?id_medecin=<?php echo $data['id_medecin'];?>">oui</a></td>
             </tr>
 <?php
         }
     $res->closeCursor();
 ?>
+</table>
 <form action="index.php"><button>retour</button></form>
 </html>
