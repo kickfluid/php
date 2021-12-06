@@ -10,22 +10,24 @@
 		}
 		?>
 		<table border="1">
-			<tr><th>Nom</th><th>Prénom</th><th>Adresse</th><th>CP</th><th>Ville</th><th>Tel</th><th>Modifier</th><th>Supprimer</th></tr>
+			<tr><th>Nom</th><th>Prénom</th><th>Civilité</th><th>Adresse</th><th>CP</th><th>Ville</th><th>Date de naissance</th><th>Numéro de sécu</th><th>Modifier</th><th>Supprimer</th></tr>
 		<?php
 		$rechercher = '%'.$_POST['rechercher'].'%';
-		$res = $linkpdo->prepare("SELECT * FROM contact WHERE prenom LIKE :rechercher OR nom LIKE :rechercher");
+		$res = $linkpdo->prepare("SELECT * FROM usager WHERE prenom LIKE :rechercher OR nom LIKE :rechercher");
 		$res->execute(array('rechercher' => $rechercher));
 			 while ($data = $res->fetch()) { 
 		?>
 			 	<tr>
 					<td><?php echo $data['nom']; ?></td>
 					<td><?php echo $data['prenom']; ?></td>
+                    <td><?php echo $data['civilite']; ?></td>
 					<td><?php echo $data['adresse']; ?></td>
-					<td><?php echo $data['cp']; ?></td>
+					<td><?php echo $data['CP']; ?></td>
 					<td><?php echo $data['ville']; ?></td>
-					<td><?php echo $data['tel']; ?></td>
-					<td><a href="modifier.php?ID=<?php echo $data['ID'];?>">oui</a></td> 
-					<td><a href="supprimer.php?ID=<?php echo $data['ID'];?>">oui</a></td>   
+					<td><?php echo $data['date_de_naissance']; ?></td>
+                    <td><?php echo $data['num_secu']; ?></td>
+					<td><a href="modificationpatient.php?ID=<?php echo $data['id_usager'];?>">oui</a></td> 
+					<td><a href="supprissionpatient.php?ID=<?php echo $data['id_usager'];?>">oui</a></td>   
 				</tr>
 			  
 		<?php
@@ -34,5 +36,5 @@
 			 $res->closeCursor();
 		 ?>
 		</table>
-		<form action="CarnetAdresses.php"><button>retour</button></form>
+		<form action="index.php"><button>retour</button></form>
 </html>
