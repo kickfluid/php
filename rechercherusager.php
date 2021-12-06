@@ -28,7 +28,7 @@
                     <td><?php echo $data['lieu_naissance']; ?></td>
                     <td><?php echo $data['num_secu']; ?></td>
 					<td><a href="modifierusager.php?id_usager=<?php echo $data['id_usager'];?>">oui</a></td> 
-					<td><a href="supprissionpatient.php?id_usager=<?php echo $data['id_usager'];?>">oui</a></td>   
+					<td><a href="suppressionpatient.php?id_usager=<?php echo $data['id_usager'];?>">oui</a></td>   
 				</tr>
 			  
 		<?php
