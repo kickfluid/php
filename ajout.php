@@ -9,6 +9,13 @@
 	}
 ?>
 
+<?php
+    $res = $linkpdo->prepare("SELECT * FROM medecin");
+    $ret = $res->execute();
+	if(!$ret){
+		echo 'Erreur';
+	}
+?>
 	<body>
 		<form action="ajoutpatient.php" method="POST">
 
@@ -22,17 +29,16 @@
             Lieu de naissance :         <input type='text' name="lieu_naissance" required/><br/>
             Numéro de sécurité sociale :         <input type='text' name="num_secu" required/><br/>
 
-			<nav>
-				<ul>
-					<li class="menu-deroulant">
-					<a href="#">Médecin réferent</a>
-					<ul class="sous-menu">
-						<li><a href="#">Graphisme</a></li>
-						<li><a href="#">Web & App</a></li>
-						<li><a href="#">Marketing</a></li>
-					</ul>
-					</li>
-
+					<select name="id_medecin" required>
+							<option value="NULL" default>-- Médecin réferent --</option>
+						<?php
+						while ($data = $res->fetch()) {
+							echo'<option value ="'.$data['id_medecin'].'">'.$data['nom'].'</option>';
+						}
+						$res->closeCursor();
+						?>
+					</select>
+					<br/>
 			<input type='reset' />
 			<input type='submit'/>
 
