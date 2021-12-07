@@ -1,3 +1,3 @@
-Faire un menu déroulant dans usager pour selectioner un médecin réferent.
+dans le menu deroulant ajouté la civilité et le prénom du médecin.
 
 Dans la recherche usager ajouter prise de rdv pour récupérer la clé de l'usager. Dans le formulaire d'inscription ajouter le menu déroulant pour le médecin.

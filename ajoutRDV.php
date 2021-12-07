@@ -20,7 +20,7 @@
 		}
 		?>
 	<body>
-		<form action="ajoutRDV.php" method="POST">
+		<form action="ajoutRDVback.php" method="POST">
 			<?php echo $data['nom'].' '.$data['prenom'];?>
 			<br/>
 			<select name="id_medecin" required>
