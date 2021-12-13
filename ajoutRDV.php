@@ -23,6 +23,7 @@
 		<form action="ajoutRDVback.php" method="POST">
 			<?php echo $data['nom'].' '.$data['prenom'];?>
 			<br/>
+			<input type='hidden' name="id_usager" required /><br/>
 			<select name="id_medecin" required>
 							<option value="NULL" default>-- Médecin --</option>
 						<?php

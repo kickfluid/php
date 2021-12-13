@@ -24,7 +24,13 @@
 			Adresse :     <input type='text' name="adresse" required/><br/>
 			Code Postal : <input type='text' name="cp" required/><br/>
 			Ville :       <input type='text' name="ville" required/><br/>
-			Civilité :         <input type='text' name="civilite" required/><br/>
+			<select name="civilite" required>
+				<option value="NULL" default>-- Civilité --</option>
+				<option value="F" default> Femme </option>
+				<option value="H" default> Homme </option>
+				<option value="A" default> Autre </option>
+			</select>
+			<br/>
             Date de naissance :         <input type='date' name="date_naissance" required/><br/>
             Lieu de naissance :         <input type='text' name="lieu_naissance" required/><br/>
             Numéro de sécurité sociale :         <input type='text' name="num_secu" required/><br/>
