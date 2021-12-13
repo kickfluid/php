@@ -35,7 +35,7 @@
         while ($data = $res3->fetch()){
         ?>
 					<td><?php echo $data['rdv']; ?></td>
-					<td><?php echo $data['duree']; ?></td>
+					<td><?php echo $data['duree']; ?> minute(s)</td>
                     <td><?php echo $data['id_usager']; ?></td>
 					<td><?php echo $data['id_medecin']; ?></td> 
         
