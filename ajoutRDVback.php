@@ -24,7 +24,7 @@
 		echo 'Erreur';
 	}
 
-	echo "Patient ajouté";
+	echo "RDV ajouté";
 	
 
 

@@ -6,6 +6,8 @@
 
 		<form action="statistiquesp.php"><button>Statistiques patients</button></form>
 		
+		<form action="afficherRDV.php"><button>Afficher les RDV</button></form>
+
 		<form action="ajoutm.php"><button>Ajouter un médecin</button></form>
 		<form action="rechercherm.php"><button>Rechercher un médecin</button></form>
 
