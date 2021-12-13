@@ -23,7 +23,7 @@
 		<form action="ajoutRDVback.php" method="POST">
 			<?php echo $data['nom'].' '.$data['prenom'];?>
 			<br/>
-			<input type='hidden' name="id_usager" required /><br/>
+			<input type='hidden' name="id_usager" value="<?php echo $data['id_usager']; ?>"required /><br/>
 			<select name="id_medecin" required>
 							<option value="NULL" default>-- Médecin --</option>
 						<?php
@@ -34,8 +34,8 @@
 						?>
 					</select>
 					<br/>
-			Date RDV :     <input type='date' name="rdv" required/><br/>
-			Heure : <input type='time' name="duree" required/><br/>
+			Date et heure du RDV :     <input type='datetime-local' name="rdv" required/><br/>
+			Durée(min) : <input type='number' name="duree" required/><br/>
 
 			<input type='reset' />
 			<input type='submit'/>
