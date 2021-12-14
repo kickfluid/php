@@ -5,6 +5,7 @@
 			Rechercher : <input type='text' name="rechercher" required/><br/>
 			<input type='reset' />
 			<input type='submit'/>
-		</form>
+		</form></br>
+		<form action="index.php"><button>retour</button></form>
 	</body>
 </html>

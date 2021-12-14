@@ -3,7 +3,6 @@
 	try { 
 		$linkpdo = new PDO("mysql:host=localhost;dbname=gestion", 'root',);
 		$linkpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		echo "Connexion réussie <br/>";
 	} 
 	catch (Exception $e) { 
 		die('Erreur : ' . $e->getMessage()); 
@@ -30,6 +29,6 @@
         }
     $res->closeCursor();
 ?>
-</table>
-<form action="index.php"><button>retour</button></form>
+</table></br>
+<form action="index.php"><button>retour</button></form></br>
 </html>
