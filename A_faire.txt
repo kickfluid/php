@@ -1,6 +1,9 @@
 dans le menu deroulant ajouté la civilité et le prénom du médecin.
 ajouter le médecin référent par défaut (selected)
 
-afficher les rdv.
-
 Dans la recherche usager ajouter prise de rdv pour récupérer la clé de l'usager. Dans le formulaire d'inscription ajouter le menu déroulant pour le médecin.
+
+La première page de votre application doit s'appeler index.php (ou index.html) pour qu'elle soit utilisée automatiquement lorsque vous accédez au répertoire du projet
+Vous devriez utiliser les fonctions include ou require pour modulariser votre code et ne pas avoir les mêmes bouts de code présents dans plusieurs pages (par exemple : la connexion à la base de données, la vérification de l'identification de l'utilisateur, l'affichage du menu, etc.)
+Les dates doivent être saisies et affichées en français (jj/mm/aaaa) et le format de saisie doit être précisé
+ 

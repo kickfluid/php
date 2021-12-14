@@ -18,17 +18,31 @@
 		if(!$ret){
 			echo 'Erreur';
 		}
+
+		$res3 = $linkpdo->prepare("SELECT m.id_medecin as idmm, u.id_medecin as idmu, m.nom, m.prenom 
+		FROM medecin m, usager u");
+		$ret = $res3->execute();
+		if(!$ret){
+			echo 'Erreur';
+		}
+
+		$data3 = $res3->fetch();
 		?>
 	<body>
 		<form action="ajoutRDVback.php" method="POST">
 			<?php echo $data['nom'].' '.$data['prenom'];?>
 			<br/>
 			<input type='hidden' name="id_usager" value="<?php echo $data['id_usager']; ?>"required /><br/>
+			Médecin :
 			<select name="id_medecin" required>
-							<option value="NULL" default>-- Médecin --</option>
+							
 						<?php
 						while ($data2 = $res2->fetch()) {
-							echo'<option value ="'.$data2['id_medecin'].'">'.$data2['nom'].'</option>';
+							if ($data3['idmm'] == $data3['idmu']){
+								echo'<option value ="'.$data2['id_medecin'].'" selected >'.$data2['nom']." ".$data2['prenom'].'</option>';
+							} else {
+								echo'<option value ="'.$data2['id_medecin'].'">'.$data2['nom']." ".$data2['prenom'].'</option>';
+							}
 						}
 						$res2->closeCursor();
 						?>

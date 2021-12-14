@@ -37,4 +37,6 @@
 $res->closeCursor();
 ?>
 </table>
+
+<form action="index.php"><button>retour</button></form>
 </html>
