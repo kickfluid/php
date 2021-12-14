@@ -9,20 +9,12 @@
 		}
 
 
-        $res = $linkpdo->prepare("SELECT * FROM medecin");
+        $res = $linkpdo->prepare("SELECT c.id_medecin, m.id_medecin, c.id_usager, u.id_usager, u.nom as nomU, u.prenom as prenomU, m.nom as nomM, m.prenom as prenomM, c.rdv, c.duree
+		FROM consultation c, medecin m, usager u
+		WHERE c.id_medecin=m.id_medecin
+		AND c.id_usager = u.id_usager
+		ORDER BY c.rdv DESC");
 		$ret = $res->execute();
-		if(!$ret){
-			echo 'Erreur';
-		}
-
-		$res2 = $linkpdo->prepare("SELECT * FROM usager");
-		$ret = $res2->execute();
-		if(!$ret){
-			echo 'Erreur';
-		}
-
-		$res3 = $linkpdo->prepare("SELECT * FROM consultation ORDER BY rdv desc");
-		$ret = $res3->execute();
 		if(!$ret){
 			echo 'Erreur';
 		}
@@ -32,12 +24,12 @@
         
 <tr>
         <?php
-        while ($data = $res3->fetch()){
+        while ($data = $res->fetch()){
         ?>
 					<td><?php echo $data['rdv']; ?></td>
 					<td><?php echo $data['duree']; ?> minute(s)</td>
-                    <td><?php echo $data['id_usager']; ?></td>
-					<td><?php echo $data['id_medecin']; ?></td> 
+                    <td><?php echo $data['nomU']." ".$data['prenomU']; ?></td>
+					<td><?php echo $data['nomM']." ".$data['prenomM']; ?></td> 
         
 </tr>
 <?php
