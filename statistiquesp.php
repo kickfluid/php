@@ -72,6 +72,43 @@
 				<td><?php echo $data_50_f['compteur_civilite']; ?></td>
 			</tr>
 		</table></br>
+
+
+		<?php
+		$res = $linkpdo->prepare("SELECT SUM(c.duree) as nb_heures, m.nom as nomM, m.prenom as prenomM
+									FROM consultation c, medecin m
+									WHERE m.id_medecin = c.id_medecin
+									GROUP BY m.id_medecin");
+		$ret = $res->execute();
+		if(!$ret){
+			echo 'Erreur';
+		}
+		?>
+
+		<table border="1">
+		<tr><th>Médecin</th><th>Durée totale des consultations</th></tr>
+				
+		<tr>
+				<?php
+				while ($data = $res->fetch()){
+				?>
+							<td><?php echo $data['nomM'].' '.$data['prenomM']; ?></td>
+							<td><?php echo $data['nb_heures']; ?> minute(s)</td>
+ 
+				
+		</tr>
+		<?php
+		}
+		$res->closeCursor();
+		?>
+		</table>
+
+
+
+
+
+
+
 		<form action="index.php"><button>retour</button></form>
 	</body>
 </html>

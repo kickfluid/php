@@ -1,4 +1,31 @@
-ajouter le médecin référent par défaut (selected)
+stat : La durée totale des consultations effectuées par chaque médecin (en nombre d'heures).
+
+Exercice 20 : cadre de l'application
+
+Sécuriser l'application en créant une page d'authentification (à l'aide d'un nom d'utilisateur et d'un mot de passe définis à l'avance). Aucune autre page de l'application ne devra être accessible si l'utilisateur n'est pas authentifié.
+
+Mettre en place un menu global proposant 4 items ("Usagers", "Médecins", "Consultations", et "Statistiques") qui sera affiché sur chaque page pour permettre à l'utilisateur de naviguer dans l'application. Ajouter tous les liens nécessaires entre les différentes pages.
+
+
+
+Exercice 21 : planning
+
+Reprendre les pages de gestion des consultations et ajouter :
+
+La modification et la suppression des consultations.
+Un contrôle de non-chevauchement des consultations pour un même médecin.
+La possibilité de filtrer la liste des consultations par médecin au moyen d'un menu déroulant.
+
+
+Exercice 22 : mise en forme
+
+Utiliser les feuilles de style (CSS) et les bases d'ergonomie logicielle pour faire en sorte que l'utilisation de l'application soit la plus agréable et intuitive possible.
+
+
+
+
+
+
 
 Dans la recherche usager ajouter prise de rdv pour récupérer la clé de l'usager. Dans le formulaire d'inscription ajouter le menu déroulant pour le médecin.
 
