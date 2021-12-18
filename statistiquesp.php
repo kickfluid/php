@@ -14,38 +14,44 @@
 		<table border="1">
 			<tr><th>Tranche d'âge</th><th>Nb Hommes</th><th>Nb Femmes</th></tr>
 
+
 				<?php
-				$moins_25_m = $linkpdo->prepare("SELECT COUNT(civilite) as compteur_civilite FROM usager WHERE civilite = 'M' AND DATEDIFF(date_de_naissance,DATE(NOW())) < 25");
+				$moins_25_m = $linkpdo->prepare("SELECT COUNT(*) as compteur_civilite
+												FROM usager u
+												WHERE civilite = 'H'
+												AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) < 25");
 				$moins_25_m->execute();
 				$data_25_m = $moins_25_m->fetch()
 				?>
 
+
+
 				<?php
-				$entre_25_50_m = $linkpdo->prepare("SELECT COUNT(civilite) as compteur_civilite FROM usager WHERE civilite = 'M' AND DATEDIFF(date_de_naissance,DATE(NOW())) < 25 AND DATEDIFF(date_de_naissance,DATE(NOW())) < 50");
+				$entre_25_50_m = $linkpdo->prepare("SELECT COUNT(*) as compteur_civilite FROM usager WHERE civilite = 'H' AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) >= 25 AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) < 50");
 				$entre_25_50_m->execute();
 				$data_25_50_m = $entre_25_50_m->fetch()
 				?>
 
 				<?php
-				$moins_50_m = $linkpdo->prepare("SELECT COUNT(civilite) as compteur_civilite FROM usager WHERE civilite = 'M' AND DATEDIFF(date_de_naissance,DATE(NOW())) > 50");
+				$moins_50_m = $linkpdo->prepare("SELECT COUNT(*) as compteur_civilite FROM usager WHERE civilite = 'H' AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) >= 50");
 				$moins_50_m->execute();
 				$data_50_m = $moins_50_m->fetch()
 				?>
 <!-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 				<?php
-				$moins_25_f = $linkpdo->prepare("SELECT COUNT(civilite) as compteur_civilite FROM usager WHERE civilite = 'F' AND DATEDIFF(date_de_naissance,DATE(NOW())) < 25");
+				$moins_25_f = $linkpdo->prepare("SELECT COUNT(*) as compteur_civilite FROM usager WHERE civilite = 'F' AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) < 25");
 				$moins_25_f->execute();
 				$data_25_f = $moins_25_f->fetch()
 				?>
 
 				<?php
-				$entre_25_50_f = $linkpdo->prepare("SELECT COUNT(civilite) as compteur_civilite FROM usager WHERE civilite = 'F' AND DATEDIFF(date_de_naissance,DATE(NOW())) < 25 AND DATEDIFF(date_de_naissance,DATE(NOW())) < 50");
+				$entre_25_50_f = $linkpdo->prepare("SELECT COUNT(*) as compteur_civilite FROM usager WHERE civilite = 'F' AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) >= 25 AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) < 50");
 				$entre_25_50_f->execute();
 				$data_25_50_f = $entre_25_50_f->fetch()
 				?>
 
 				<?php
-				$moins_50_f = $linkpdo->prepare("SELECT COUNT(civilite) as compteur_civilite FROM usager WHERE civilite = 'F' AND DATEDIFF(date_de_naissance,DATE(NOW())) > 50");
+				$moins_50_f = $linkpdo->prepare("SELECT COUNT(*) as compteur_civilite FROM usager WHERE civilite = 'F' AND YEAR(DATE(NOW())) - YEAR(date_de_naissance) >= 50");
 				$moins_50_f->execute();
 				$data_50_f = $moins_50_f->fetch()
 				?>			
