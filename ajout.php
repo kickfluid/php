@@ -39,7 +39,7 @@
 							<option value="NULL" default>-- Médecin réferent --</option>
 						<?php
 						while ($data = $res->fetch()) {
-							echo'<option value ="'.$data['id_medecin'].'">'.$data['nom'].'</option>';
+							echo'<option value ="'.$data['id_medecin'].'">'.$data['nom'].' '.$data['prenom'].' </option>';
 						}
 						$res->closeCursor();
 						?>

@@ -19,14 +19,6 @@
 			echo 'Erreur';
 		}
 
-		$res3 = $linkpdo->prepare("SELECT m.id_medecin as idmm, u.id_medecin as idmu, m.nom, m.prenom 
-		FROM medecin m, usager u");
-		$ret = $res3->execute();
-		if(!$ret){
-			echo 'Erreur';
-		}
-
-		$data3 = $res3->fetch();
 		?>
 	<body>
 		<form action="ajoutRDVback.php" method="POST">
@@ -38,7 +30,7 @@
 							
 						<?php
 						while ($data2 = $res2->fetch()) {
-							if ($data3['idmm'] == $data3['idmu']){
+							if ($data2['id_medecin'] == $data['id_medecin']){
 								echo'<option value ="'.$data2['id_medecin'].'" selected >'.$data2['nom']." ".$data2['prenom'].'</option>';
 							} else {
 								echo'<option value ="'.$data2['id_medecin'].'">'.$data2['nom']." ".$data2['prenom'].'</option>';
